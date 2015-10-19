@@ -15,4 +15,6 @@ Plot process activity by time nodes:
 	-Threat Intel
 
 
-Tool is used to help explore the "Molecular Makeup" of malicous process activities.  View threats in a new way in order to better threat hunting techniques and spot new indicators.
+Tool is used to help explore the "Molecular Makeup" of malicous process activities.  
+View threats in a new way in order to better threat hunting techniques and spot new indicators.
+More to come...
