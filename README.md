@@ -3,7 +3,8 @@ CarbonGraphiti turns Carbon Black process reports into a format that can be rend
 ![Example Process](https://raw.githubusercontent.com/droptables/CarbonGraphiti/master/imgs/CB-Example.png "Example Process")
 
 ```
-usage: ./Carbon-Graphiti -l https://cb-server-url.com/#analyze/00001b23-0000-1fd4-01d0-d69a136419e0/1 -c cb-server.config -o output-name.json
+usage: 
+./Carbon-Graphiti.py -l https://cb-server-url.com/#analyze/00001b23-0000-1fd4-01d0-d69a136419e0/1 -c servers.config -o output-name.json
 
 
 Plot process activity by time nodes:
