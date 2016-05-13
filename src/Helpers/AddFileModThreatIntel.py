@@ -9,7 +9,7 @@ class AddFileModThreatIntel(object):
 	@staticmethod
 	def Run(graph, timetable, report):
 		print colored.yellow("[*] Adding File Modifications Threat Intel From Bit9.")
-		for item in report['process']['filemod_complete']:
+		for item in report['process'].get('filemod_complete', []):
 			if item.split("|")[3]!='':
 				hashvalue =	item.split('|')[3]
 				intelresult=CheckHash.Run(hashvalue)

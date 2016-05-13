@@ -9,7 +9,7 @@ class AddFileMods(object):
 	@staticmethod
 	def Run(graph, timetable, report):
 		print colored.yellow("[*] Adding file actions.")
-		for item in report['process']['filemod_complete']:
+		for item in report['process'].get('filemod_complete', []):
 			if item.split("|")[1][:-4] in timetable:
 				attrs = GetFileActionAttributes.Run(int(item.split("|")[0]))
 				time = item.split("|")[1][:-4]
