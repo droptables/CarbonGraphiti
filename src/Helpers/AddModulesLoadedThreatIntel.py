@@ -16,7 +16,7 @@ class AddModulesLoadedThreatIntel(object):
 				intelresult=CheckHash.Run(hashvalue)
 				#print intelresult
 				#print type(intelresult[0]['threat'])
-				if intelresult[0]['threat']==100:
+				if len(intelresult) >= 1 and intelresult[0]['threat']==100:
 					print colored.magenta("[+] Bit9 Threat Intel Hit! "+str(hashvalue))
 					threatlabel=intelresult[0]['fileName']+str("-Threat=")+str(intelresult[0]['threat'])
 					time = item.split("|")[0][:-4]

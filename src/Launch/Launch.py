@@ -33,6 +33,7 @@ class Launch(object):
         self.parser.add_argument('-l','--link', action='store', dest="link", help="Link to Carbon Black process report link.", required=True)
         self.parser.add_argument('-c','--config-file', action='store', dest="configfile", help="Config file for Carbon Black Server settings.", required=True)
         self.parser.add_argument('-o','--output-file', action='store', dest="outputfile", help="Output file to save Semantic graph.", required=True)
+        self.parser.add_argument('--cbprotection', action='store_true', dest="cbprotection", help="Integrate results from Cb Enterprise Protection file catalog", default=False)
 
         self.args = self.parser.parse_args()
         return self.args

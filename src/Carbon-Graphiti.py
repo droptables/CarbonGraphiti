@@ -26,7 +26,7 @@ if __name__ == '__main__':
 	cb=launch.load_config_file(args.configfile)
 	#Get process report for CB link
 
-	report=GetProcessReport.Run(cb,link)
+	report=GetProcessReport.Run(cb,args.link)
 	#Create a timetable
 	timetable,timelist=CreateTimeTable.Run(report)
 	#Create time nodes to plot process activity on
@@ -39,10 +39,12 @@ if __name__ == '__main__':
 	AddNetConns.Run(graph, timetable, report)
 	#Add registry mods
 	AddRegistryMods.Run(graph, timetable, report)
-	#Add Threat Intel from Bit9 on file modifications
-	AddFileModThreatIntel.Run(graph, timetable, report)
-	#Add Threat Intel from Bit9 on modules loaded
-	AddModulesLoadedThreatIntel.Run(graph, timetable, report)
+
+	if args.cbprotection:
+		#Add Threat Intel from Cb Protection on file modifications
+		AddFileModThreatIntel.Run(graph, timetable, report)
+		#Add Threat Intel from Cb Protection on modules loaded
+		AddModulesLoadedThreatIntel.Run(graph, timetable, report)
 
 
 	#Save output JSON file for OpenGraphiti
